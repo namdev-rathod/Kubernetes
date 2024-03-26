@@ -50,14 +50,23 @@
 
     - Once Download Completed Then Install It
 
-    - Check AWS CLI Version - aws --version
+    - Check AWS CLI Version
+    
+    ```
+    aws --version
+
+    ```
 
     ![alt text](image-7.png)
 
 3. **Install Kubectl**
     - Visit Link https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
     - Install Kubernetes 1.29 Version By Command Line 
-    - curl.exe -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/windows/amd64/kubectl.exe
+    
+    ```
+    curl.exe -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.0/2024-01-04/bin/windows/amd64/kubectl.exe
+    
+    ```
     - Once Installed Kubectl. Check Version # kubectl version --client
     
     ![alt text](image-8.png)
@@ -106,5 +115,4 @@
     eksctl create cluster --name demo-cluster --version 1.29 --region ap-south-1 --nodegroup-name standard-workers --node-type t3.medium --nodes 2 --managed
 
     ```
-
 
