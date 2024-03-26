@@ -101,6 +101,10 @@
 
 6. **Create EKS Cluster By Eksctl**
     - Use Below Command To Create EKS Cluster
-    - eksctl create cluster --name demo-cluster --version 1.29 --region ap-south-1 --nodegroup-name standard-workers --node-type t3.medium --nodes 2 --managed
-
     
+    ```
+    eksctl create cluster --name demo-cluster --version 1.29 --region ap-south-1 --nodegroup-name standard-workers --node-type t3.medium --nodes 2 --managed
+
+    ```
+
+
