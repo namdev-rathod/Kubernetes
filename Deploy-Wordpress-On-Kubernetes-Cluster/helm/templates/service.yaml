@@ -1,0 +1,32 @@
+{{- if .Values.wordpress }}
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: {{ .Values.wordpress.name }}
+  name: {{ .Values.wordpress.name }}
+  namespace: {{ .Values.wordpress.namespace }}
+spec:
+  ports:
+    - port: {{ .Values.wordpress.service.port }}
+  selector:
+    name: {{ .Values.wordpress.name }}
+  type: {{ .Values.wordpress.service.type }}
+{{- end }}
+---
+{{- if .Values.mysql }}
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: {{ .Values.mysql.name }}
+  name: {{ .Values.mysql.name }}
+  namespace: {{ .Values.mysql.namespace }}
+spec:
+  ports:
+    - port: {{ .Values.mysql.service.port }}
+  selector:
+    name: {{ .Values.mysql.name }}
+  type: {{ .Values.mysql.service.type }}
+{{- end }}
+

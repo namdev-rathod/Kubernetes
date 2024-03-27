@@ -1,0 +1,31 @@
+
+
+{{- if .Values.wordpress }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.wordpress.name }}-pvc
+  namespace: {{ .Values.wordpress.namespace }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ebs-sc
+  resources:
+    requests:
+      storage: {{ .Values.wordpress.deployment.storage }}
+{{- end }}
+---
+{{- if .Values.mysql }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ .Values.mysql.name }}
+  namespace: {{ .Values.mysql.namespace }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: ebs-sc
+  resources:
+    requests:
+      storage: {{ .Values.mysql.deployment.storage }}
+{{- end }}

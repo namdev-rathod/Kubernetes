@@ -1,0 +1,16 @@
+{{- if .Values.wordpress }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.wordpress.namespace }}
+
+{{- end }}
+
+---
+{{- if .Values.mysql }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: {{ .Values.mysql.namespace }}
+
+{{- end }}
