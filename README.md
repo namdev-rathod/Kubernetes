@@ -47,13 +47,13 @@ If you're considering a 𝐂𝐚𝐫𝐞𝐞𝐫 𝐢𝐧 𝐃𝐞𝐯𝐎𝐩�
 12. Logging & Monitoring 📊  
 13. Secrets 🔒  
 14. Deployments 
-   - Deploy Sample Applications  
-   - Rolling Updates  
-   - Deployment Strategies  
+    - Deploy Sample Applications  
+    - Rolling Updates  
+    - Deployment Strategies  
 
 15. Cluster Maintenance 🔄  
-   - Patching
-   - Upgrades   
+    - Patching
+    - Upgrades   
 
 16. Security 🔐  
 17. Storage 💾  
