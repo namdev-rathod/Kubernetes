@@ -115,4 +115,21 @@
     eksctl create cluster --name demo-cluster --version 1.29 --region ap-south-1 --nodegroup-name standard-workers --node-type t3.medium --nodes 2 --managed
 
     ```
+7. **Create EKS Cluster In Auto Scaling Mode**
+
+```
+
+eksctl create cluster --name devops-projects-cluster --version 1.32 --region ap-south-1 --nodegroup-name devops-projects-eks --node-type t3.medium --nodes 2 --nodes-min 2 --nodes-max 5 --managed
+
+```
+
+8. **Update Config & Connect EKS Cluster**
+
+```
+
+aws eks update-kubeconfig --name devops-projects-cluster --region ap-south-1
+
+```
+
+
 
