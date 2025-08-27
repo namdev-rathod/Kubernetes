@@ -28,6 +28,7 @@ It allows Kubernetes pods to assume an IAM role securely without using node inst
 
 Create a file called trust-policy.json:
 
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -45,40 +46,40 @@ Create a file called trust-policy.json:
     }
   ]
 }
-
+```
 Create the IAM role:
-
+```
 aws iam create-role \
   --role-name devops-role \
   --assume-role-policy-document file://trust-policy.json
-
+```
 Attach required policies (example: S3 full access) 🗂️:
-
+```
 aws iam attach-role-policy \
   --role-name devops-role \
   --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
-
+```
 
 ---
 
 2️⃣ Create Kubernetes Service Account
 
 Create service account:
-
+```
 kubectl create serviceaccount <service-account> -n devops-namespace
-
+```
 Annotate it with IAM role:
-
+```
 kubectl annotate serviceaccount <service-account> \
 eks.amazonaws.com/role-arn=arn:aws:iam::<aws-account>:role/devops-role \
 -n devops-namespace
-
+```
 Verify 🧐:
-
+```
 kubectl get sa <service-account> -n devops-namespace -o yaml
-
+```
 Expected YAML:
-
+```
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -86,14 +87,14 @@ metadata:
   namespace: devops-namespace
   annotations:
     eks.amazonaws.com/role-arn: arn:aws:iam::<aws-account>:role/devops-role
-
+```
 
 ---
 
 3️⃣ Deploy Application 📦
 
 Example deployment manifest:
-
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -115,7 +116,7 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
-
+```
 Apply the deployment:
 
 kubectl apply -f k8s-deployment.yaml
@@ -126,10 +127,10 @@ kubectl apply -f k8s-deployment.yaml
 4️⃣ Verify IRSA ✅
 
 Check the pod and IAM role:
-
+```
 kubectl describe pod <pod-name> -n devops-namespace | grep -i role
 kubectl exec -it <pod-name> -n devops-namespace -- aws sts get-caller-identity
-
+```
 You should see the IAM role ARN in the output. 🛡️
 
 
