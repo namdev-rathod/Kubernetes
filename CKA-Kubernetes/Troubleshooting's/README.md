@@ -2,6 +2,9 @@
 
 ---
 
+🚀 EKS IRSA Demo: Fixing IMDSv2 Issues in Kubernetes Pods 🛡️
+---
+
 🚀 EKS IRSA Demo (IAM Role for Service Accounts)
 
 This repository demonstrates how to configure IAM Role for Service Accounts (IRSA) in Amazon EKS.
