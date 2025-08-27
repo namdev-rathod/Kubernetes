@@ -1,26 +1,28 @@
 # Kubernetes - Troubleshooting's
 
-EKS IRSA Demo (IAM Role for Service Accounts)
+---
+
+🚀 EKS IRSA Demo (IAM Role for Service Accounts)
 
 This repository demonstrates how to configure IAM Role for Service Accounts (IRSA) in Amazon EKS.
-It allows Kubernetes pods to assume an IAM role securely without using node instance profiles.
+It allows Kubernetes pods to assume an IAM role securely without using node instance profiles. 🛡️
 
 
 ---
 
-🔹 Prerequisites
+📌 Prerequisites
 
-AWS CLI installed and configured
+✅ AWS CLI installed and configured
 
-kubectl installed and configured for your EKS cluster
+✅ kubectl installed and configured for your EKS cluster
 
-eksctl (optional, for cluster setup)
+✅ eksctl (optional, for cluster setup)
 
 
 
 ---
 
-🔹 Steps to Configure IRSA
+🛠️ Steps to Configure IRSA
 
 1️⃣ Create IAM Role with Trust Policy
 
@@ -50,7 +52,7 @@ aws iam create-role \
   --role-name devops-role \
   --assume-role-policy-document file://trust-policy.json
 
-Attach required policies (example: S3 full access):
+Attach required policies (example: S3 full access) 🗂️:
 
 aws iam attach-role-policy \
   --role-name devops-role \
@@ -71,7 +73,7 @@ kubectl annotate serviceaccount <service-account> \
 eks.amazonaws.com/role-arn=arn:aws:iam::<aws-account>:role/devops-role \
 -n devops-namespace
 
-Verify:
+Verify 🧐:
 
 kubectl get sa <service-account> -n devops-namespace -o yaml
 
@@ -88,7 +90,7 @@ metadata:
 
 ---
 
-3️⃣ Deploy Application
+3️⃣ Deploy Application 📦
 
 Example deployment manifest:
 
@@ -121,19 +123,19 @@ kubectl apply -f k8s-deployment.yaml
 
 ---
 
-4️⃣ Verify IRSA
+4️⃣ Verify IRSA ✅
 
 Check the pod and IAM role:
 
 kubectl describe pod <pod-name> -n devops-namespace | grep -i role
 kubectl exec -it <pod-name> -n devops-namespace -- aws sts get-caller-identity
 
-You should see the IAM role ARN in the output.
+You should see the IAM role ARN in the output. 🛡️
 
 
 ---
 
-5️⃣ Notes
+5️⃣ Notes 📝
 
 Annotations are metadata attached to Kubernetes objects that external controllers (like IRSA) read to allow special behavior.
 
@@ -147,10 +149,12 @@ Queryable by kubectl get -l	Not queryable, just metadata
 Example: app=frontend	Example: eks.amazonaws.com/role-arn=arn:aws:iam::<aws-account>:role/devops-role
 
 
-Pro Tip: Always use dedicated IAM roles per service account. Avoid using node instance IAM roles directly in pods.
+Pro Tip: Always use dedicated IAM roles per service account. Avoid using node instance IAM roles directly in pods. ⚡
 
 ---
 
-✅ Outcome
+🎯 Outcome
 
-Pods now securely assume the IAM role via IRSA, no more IMDSv2 issues, and can access AWS resources seamlessly.
+Pods now securely assume the IAM role via IRSA, no more IMDSv2 issues, and can access AWS resources seamlessly. ✅
+
+
