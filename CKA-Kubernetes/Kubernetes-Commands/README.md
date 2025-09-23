@@ -1,4 +1,3 @@
-````markdown
 # 🚀 Daily Use Kubernetes Commands (EKS: demo-cluster)
 
 Here are some of the most useful Kubernetes commands for daily DevOps work with EKS.  
