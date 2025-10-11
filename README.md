@@ -1,7 +1,6 @@
-# Kubernetes - For Beginner To Advance
+# Kubernetes - Zero To Hero
 
 If you're considering a 𝐂𝐚𝐫𝐞𝐞𝐫 𝐢𝐧 𝐃𝐞𝐯𝐎𝐩𝐬, here are some essential technologies you’ll need to master: 💼🚀  
-
 
 ## Kubernetes Syllabus 📘
 
