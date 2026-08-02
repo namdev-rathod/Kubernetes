@@ -2,6 +2,8 @@
 
 If you're considering a 𝐂𝐚𝐫𝐞𝐞𝐫 𝐢𝐧 𝐃𝐞𝐯𝐎𝐩𝐬, here are some essential technologies you’ll need to master: 💼🚀  
 
+## Added new line for testing feature branch code changes.
+
 ## Kubernetes Syllabus 📘
 
 1. Introduction  
