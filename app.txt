@@ -1,6 +1,6 @@
 Application: Payment Service
 
-Version: 1.5 - Production Release
+Version: 2.0 - Payment Enhancement
 
 Owner: DevOps Team
 
