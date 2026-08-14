@@ -20,7 +20,9 @@ If you're considering a 𝐂𝐚𝐫𝐞𝐞𝐫 𝐢𝐧 𝐃𝐞𝐯𝐎𝐩�
    - Affinity  
    - Static Pods  
    - Sidecar  
-   - Multiple Schedulers  
+   - Multiple Schedulers
+   - CNI Plugins
+   - Autoscaler  
 
 5. Kubernetes Services 
    - NodePort  
