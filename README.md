@@ -35,7 +35,9 @@ If you're considering a 𝐂𝐚𝐫𝐞𝐞𝐫 𝐢𝐧 𝐃𝐞𝐯𝐎𝐩�
    - API  
    - ETCD  
    - Scheduler  
-   - Master-Worker Node  
+   - Master-Worker Node
+   - Control Plane
+   - Data Plane
 
 7. Kubernetes Controllers 
    - Deployments  
